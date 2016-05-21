@@ -3,7 +3,8 @@
 // Declare app level module which depends on views, and components
 var greyTHRBizanApp = angular.module('greyTHRBizanApp', [
     'ionic',
-    'greyTHRBizanAppContorllers'
+    'greyTHRBizanAppContorllers',
+    'nvd3'
 ])
 
 .run(["$ionicPlatform","$rootScope","$state","$ionicSideMenuDelegate",function($ionicPlatform,$rootScope,$state,$ionicSideMenuDelegate ) {
