@@ -1,0 +1,35 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content stly="background: rgba(43, 46, 51, 0.02);">
+      
+    <ion-nav-view name="menuContent" style="background: rgba(43, 46, 51, 0.02);"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="theme-sdtl.color-blue sidebar" width="175">
+    <ion-header-bar class="bar-stable sidebar-top">
+        <div>
+            <img src="img/avatar1_big.png" class="img-responsive img-circle lt-menu-avatar" alt="friend 8">
+        </div>        
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="setPageSelection('dashboardpage')">
+           <i class="ion-ios-speedometer"></i> Dashboard 
+        </ion-item>
+          <ion-item menu-close ng-click="setPageSelection('configurepage')">
+           <i class="ion-ios-speedometer"></i> Configure 
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+    
+
+    
+    <ion-side-menu side="right">
+            <ion-header-bar class="bar-assertive">
+                <h1 class="title">Right Menu</h1>
+            </ion-header-bar>
+            <ion-content>
+                <ion-cart></ion-cart>
+            </ion-content>
+        </ion-side-menu>
+</ion-side-menus>

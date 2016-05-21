@@ -1,0 +1,149 @@
+/* Empty. Add your own CSS if you like */
+#header-logo .logo-content-big, .logo-content-small {
+    /*background: url(../../image-resources/logo-admin.png) left 50% no-repeat;
+    text-indent: -999em;*/
+    position: absolute;
+    height: 34px;
+    width: 190px;
+    left: 10px;
+    top: 50%;
+    margin-top: -17px
+}
+
+
+.lt-menu-avatar{
+        max-width: 50px;
+        max-height: 50px;
+}
+
+.menu-left *{
+    background-color: transparent !important;
+    border: none;
+}
+
+.bar-header {
+   height: 70px; /*just an example*/
+}
+
+.bar-header .title {
+   line-height: 70px;
+}
+
+.has-header {
+   top: 70px;
+}
+
+.sidebar ion-item{
+    color: #888
+}
+
+.sidebar ion-item:hover{
+    background: rgb(155, 181, 214) !important;
+    
+    color: #fff !important;
+}
+
+ion-side-menu-content ion-nav-view,ion-view,ion-content {
+  background:rgba(122, 124, 128, 0.05) !important
+} 
+
+.contente-header-bar{
+    height: 71px;
+    border-bottom-color: rgba(96, 184, 222, 0.58);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-top: 4px;
+    /*padding-left: 40px;*/
+    background: #2b2e33 !important;
+}
+
+.contente-header-bar .header-menu-bt{
+    padding: 0px;
+}
+.header-menu-bt span:hover{
+    cursor: pointer;
+    box-shadow: 0px 14px 38px rgba(19, 26, 93, 0.46);   
+    -webkit-box-shadow:0px 14px 38px rgba(19, 26, 93, 0.46);   
+    -moz-box-shadow:0px 14px 38px rgba(19, 26, 93, 0.46);   
+    border-radius: 50%;
+}
+
+.shadow-box-hearder-btn{
+    box-shadow: 0px 1px 8px rgba(19, 26, 93, 0.46);   
+     -webkit-box-shadow:0px 1px 8px rgba(19, 26, 93, 0.46);     
+    -moz-box-shadow:0px 1px 8px rgba(19, 26, 93, 0.46);   
+        /*-webkit-box-shadow: 0px 5px 17px rgb(28, 31, 31);*/
+    
+    border-radius: 50%;
+}
+
+.dashbord-card-panel{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -o-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;    margin-bottom: 20px;
+    
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: block;
+    border: 0;
+}
+
+.dashbord-card-panel .dbc-panel-body{
+    width: auto;
+    min-height: 90px;
+    max-height: 100px;
+    padding: 22px;
+}
+
+.dashbord-card-panel .dbc-panel-footer{
+    padding: 8px 22px;
+    background-color: #f7f9fa;
+    border-top: 1px solid #f7f7f7;
+    border-bottom-right-radius: 1px;
+    border-bottom-left-radius: 1px;
+}
+
+.dbc-panel-footer-primary{
+    background-color: #3f51b5 !important;
+    font-size: 12px;
+}
+
+.dbc-panel-footer-success{
+    background-color: #4caf50 !important;
+    font-size: 12px;
+}
+
+.dbc-panel-footer-info{
+    background-color: #2196f3 !important;
+    font-size: 12px;
+}
+
+.dbc-panel-footer-pink{
+    background-color: #e91e63 !important;
+    font-size: 12px;
+}
+
+.info-text-left{
+    float: left;
+}
+.info-text-right{
+    float: right;
+}
+
+.page-selector-ind{
+    border-top: 11px solid #2B2E33;
+    border-right: 11px solid transparent;
+    border-left: 11px solid transparent;
+    content: '';
+    display: block;
+    height: 0;
+    right: 0;
+    margin-right: 2px;
+    margin-top: 5px;
+    top: 11px;
+    width: 0;
+    z-index: 100;
+}
