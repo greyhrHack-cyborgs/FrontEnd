@@ -26,7 +26,12 @@ angular.module('greyTHRBizanAppContorllers', [])
 
 .controller('dashboardLandingCtrl', function($scope) {
      //var vm = this;
-      $scope.vm={};
+
+})
+.controller('configureCtrl', function($scope){
+})
+.controller('analyserctrl', function($scope){
+          $scope.vm={};
       $scope.vm.options = {};
       $scope.vm.data = {};
     
@@ -115,7 +120,7 @@ angular.module('greyTHRBizanAppContorllers', [])
           }
         ];
     
-    var sin = [],sin2 = [],
+    var sin = [],sin2 = [],sin3 = [],
                 cos = [];
 
             //Data is represented as an array of {x,y} pairs.
@@ -123,6 +128,7 @@ angular.module('greyTHRBizanAppContorllers', [])
                 sin.push({x: i, y: Math.sin(i/10)});
                 sin2.push({x: i, y: i % 10 == 5 ? null : Math.sin(i/10) *0.25 + 0.5});
                 cos.push({x: i, y: .5 * Math.cos(i/10+ 2) + Math.random() / 10});
+                sin3.push({x: i, y: Math.sin(i/10*0.5+8/3)});
             }
     
     console.log(sin);
@@ -136,15 +142,20 @@ angular.module('greyTHRBizanAppContorllers', [])
                 {
                     values: cos,
                     key: 'Cosine Wave',
-                    color: '#2ca02c'
+                    color: '#2ca02c',
+                    area:true
                 },
                 {
                     values: sin2,
                     key: 'Another sine wave',
                     color: '#7777ff',
                     area: true      //area - set to true if you want this line to turn into a filled area chart.
+                },
+                 {
+                    values: sin3,
+                    key: 'Another sine 3 wave',
+                    color: '#0980ff',
+                    
                 }
             ];
-})
-.controller('configureCtrl', function($scope){
 });

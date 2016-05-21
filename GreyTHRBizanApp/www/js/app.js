@@ -74,6 +74,15 @@ config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRoute
               }
             }
     })
+    .state('greyTHRBizanApp.anayserpage',{
+        url : "/anayserpage",
+         views: {
+              'menuContent': {
+                templateUrl: 'templates/anayserpage.html',
+                controller: 'analyserctrl'
+              }
+            }
+    })
 
     $urlRouterProvider.otherwise('/greyTHRBizanApp/dashboardpage');
 }]);

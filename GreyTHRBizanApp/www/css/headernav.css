@@ -49,7 +49,8 @@ body {
     max-width: 3000px;
     transition: max-width .7s ease;
     -moz-transition: max-width .7s ease;
-    -webkit-transition: max-width .7s ease
+    -webkit-transition: max-width .7s ease;
+    background: #B3B3F7;
 }
 
 .page-header {
