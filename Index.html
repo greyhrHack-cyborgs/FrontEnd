@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="css/foundation.css">
+  	<link rel="stylesheet" href="css/app.css">
+  	<link rel="stylesheet" href="dashboard.css">
+ 	<script src="js/vendor/modernizr.js"></script>
+ 	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+ 	<script src="js/jquery.ajax-cross-origin.min.js"></script>
+ 	</head>
+<body>
+
+
+	<div class="off-canvas-wrapper">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			<div class="off-canvas-content" data-off-canvas-content>
+				<div class="callout primary menu-top">
+					<div class="row column">
+					<h1 class="menutitle">Dashboard</h1>
+					<h1>Hi Admin &nbsp; |&nbsp;&nbsp; <a href="">Logout</a></h1>
+					</div>
+				</div>
+				<div class="row column">
+					<a class="button create" href="index2.html" data-open="Modal1">Create</a>						
+				</div>
+				<div class="row small-up-2 medium-up-3 large-up-4" style="margin-left:99px;">
+					<div class="nodata">No data connection available</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!-- Pop up - create datasource -->
+<div class="reveal tiny" id="Modal1" data-reveal>
+<form>
+<div class="row small-up-2 medium-up-3 large-up-4">
+	<div class="column-m card-wr popup">
+		<div class="data-row">
+			<div class="data-col1 popup">Name</div>
+			<div class="data-col2"><input type="text" name="datasourcename" placeholder="Enter connection name" style="width:200px;" autofocus value="Name1"></div>
+		</div>
+		<div class="data-row">
+			<div class="data-col1 popup">Data Source</div>
+			<div class="data-col2">
+				<input type="radio" name="pokemon" value="file" id="pokemonRed" required><label for="pokemonRed">File</label>
+				<input type="radio" name="pokemon" value="dbsource" id="pokemonBlue"><label for="pokemonBlue">DB</label>
+			</div>
+		</div>
+		<div class="data-row but11">
+			<div class="expanded button-group">
+			  <a class="button edit s2" id="createId" href="index2.html">Create</a>
+			  <a class="button delete s2 close-button" data-close aria-label="Close modal">Cancel</a>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+</div>
+
+<!-- Pop up - create datasource -->
+<div class="reveal large" id="Modal2" data-reveal>
+<div class="uploadarea">
+	<div class="but">
+		<a class="secondary button" href="#">Upload</a>
+	</div>
+</div>
+<table class="val-table">
+  <thead>
+    <tr class="rw">
+      <th width="160">Column name</th>
+      <th width="90">Column data type</th>
+      <th width="100">Column format</th>
+      <th width="100">Other1</th>
+      <th width="100">Other2</th>
+      <!-- <th width="100">Other</th>
+      <th width="100">Value</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="rw">
+      <td><input type="text" placeholder="Enter column name" style="width:200px;" autofocus></td>
+      <td>
+      	<select>
+      	    <option>Select</option>
+      	    <option value="string">String</option>
+      	    <option value="double">double</option>
+      	    <option value="int">Int</option>
+      	    <option value="boolean">Boolean</option>
+      	  </select>
+      </td>
+      <td>
+      	<select class="formatId">
+      	    <option>Select</option>
+      	    <option value="time">Time</option>
+      	    <option value="dimension">Dimension</option>
+      	    <option value="metrics">Metrics</option>
+      	  </select>
+      </td>
+     </tr>
+    <tr class="rw">
+      <td><input type="text" placeholder="Enter column name" style="width:200px;" autofocus></td>
+      <td>
+      	<select>
+      	    <option>Select</option>
+      	    <option value="string">String</option>
+      	    <option value="double">double</option>
+      	    <option value="int">Int</option>
+      	    <option value="boolean">Boolean</option>
+      	  </select>
+      </td>
+      <td>
+      	<select class="formatId">
+      	    <option>Select</option>
+      	    <option value="time">Time</option>
+      	    <option value="dimension">Dimension</option>
+      	    <option value="metrics">Metrics</option>
+      	  </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+ <div class="input_fields_wrap">
+    <button class=" button add_field_button">Add More Fields</button>
+ </div>
+<div class="save-wrapper">
+	<div class="but">
+		<a class="button" href="#">Save</a>
+		<a class="button close-but" data-close aria-label="Close modal">Cancel</a>
+	</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+  $(document).foundation();
+</script>
+
+<script>
+	$(document).ready(function() {
+	    var max_fields      = 20; //maximum input boxes allowed
+	    var wrapper         = $("tbody"); //Fields wrapper
+	    var add_button      = $(".add_field_button"); //Add button ID
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<tr class="rw"><td><input type="text" placeholder="Enter column name" style="width:200px;"></td><td><select><option>Select</option><option value="string">String</option> <option value="double">double</option> <option value="int">Int</option> <option value="boolean">Boolean</option> </select> </td> <td> <select class="formatId"><option>Select</option> <option value="time">Time</option><option value="dimension">Dimension</option><option value="metrics">Metrics</option> </select></td></tr>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    })
+	});
+
+</script>
+<!-- <script>
+$('.formatId').change(function(){
+   var selection = $(this).val();
+    switch(selection)
+   {
+       case 'time':
+			$(this).parent().parent().find("td:nth-child(4)").remove();
+       		$(this).parent().parent().append('<td class="app"><input type="date" placeholder="date" style="width:170px;"></td>');
+	        break;
+       case 'dimension':
+  			$(this).parent().parent().find("td:nth-child(4)").remove();
+         	$(this).parent().parent().append('<td class="app"><input type="text" placeholder="possible value" style="width:170px;"></td>')
+            break;
+       case 'metrics':
+   			$(this).parent().parent().find("td:nth-child(4)").remove();
+         	$(this).parent().parent().append('<td class="app"><input type="text" placeholder="min" style="width:170px;"></td><td class="app"><input type="text" placeholder="max" style="width:170px;"></td>')
+            break;     
+   }
+});
+</script> -->
+<!-- <script>
+$(document).foundation('reveal', {
+    opened: function(){
+        $(this).find("input").focus();
+    }
+}
+<!-- </script> -->
+<!-- <script>
+	$(document).ready(function() {
+	$("#createId").click(function(){
+		//alert($('#pokemonRed').val()); 
+	$.ajax({
+		// crossOrigin: true,
+	dataType:'jsonp',
+    url: '192.168.20.113:8088',
+    data: {'sourceName':$("input[name=datasourcename]").val(),'sourceType':$('#pokemonRed').val(),'sourcePath':"testpath"},
+    complete : function(){
+        alert(this.url)
+    },
+    success: function(daa){
+    	alert("success");
+    	alert(data);
+    }
+});
+});
+});
+	</script> --> -->
+</body>
+</html>
+
+
+
+
+
